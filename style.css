@@ -1,0 +1,62 @@
+/* Basic page styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+img {
+  display: block;
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+/* Calculator styling */
+#calculator {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: fit-content;
+}
+
+#calc-display {
+  font-size: 1.2em;
+  text-align: right;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.calc-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-gap: 5px;
+}
+
+.calc-keys button {
+  font-size: 1.1em;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border: none;
+  cursor: pointer;
+}
+
+.calc-keys button:hover {
+  background-color: #d0d0d0;
+}
+
+/* Make the clear button span two columns */
+.calc-keys button[onclick*="clear"] {
+  grid-column: span 2;
+  background-color: #ffcccc;
+}

@@ -1,0 +1,83 @@
+<!-- Updated calculator script -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My First Website</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>The Future of Information Technology in Malaysia</h1>
+    <h3 style="margin-top: 60px" ;>It is going to be ok</h3>
+
+
+    <img src="sigeon pex.png" alt="Image placeholder" style="max-width:100%;height:auto;">
+    <p>pigeon on toilet</p>
+    <p style="margin-top: 60px" ;>Calculator (not working)</p>
+    <div id="calculator">
+        <input type="text" id="calc-display" readonly style="width:200px;margin-bottom:5px;">
+        <div class="calc-keys">
+            <!-- Number buttons -->
+            <button onclick="addNumber('7')">7</button>
+            <button onclick="addNumber('8')">8</button>
+            <button onclick="addNumber('9')">9</button>
+            <button onclick="handleOp('div')">/</button>
+            <button onclick="addNumber('4')">4</button>
+            <button onclick="addNumber('5')">5</button>
+            <button onclick="addNumber('6')">6</button>
+            <button onclick="handleOp('mul')">*</button>
+            <button onclick="addNumber('1')">1</button>
+            <button onclick="addNumber('2')">2</button>
+            <button onclick="addNumber('3')">3</button>
+            <button onclick="handleOp('sub')">-</button>
+            <button onclick="addNumber('gay')">gay</button>
+            <button onclick="addNumber('0')">0</button>
+            <button onclick="handleOp('add')">+</button>
+            <button onclick="evaluate()">=</button>
+
+        </div>
+    </div>
+
+    <script>
+        function addNumber(num) {
+            const display = document.getElementById('calc-display');
+            display.value = (display.value || '') + num;
+        }
+        function clearDisplay() {
+            document.getElementById('calc-display').value = '';
+        }
+        function handleOp(op) {
+            const display = document.getElementById('calc-display');
+            const symbol = op === 'add' ? '+' :
+                op === 'sub' ? '-' :
+                    op === 'mul' ? '*' :
+                        op === 'div' ? '/' : '';
+            display.value = (display.value || '') + symbol;
+        }
+        function evaluate() {
+            const display = document.getElementById('calc-display');
+            const expr = display.value;
+            if (expr === '1+1') {
+                display.value = 'are you fucking serious?';
+                return;
+            }
+            try {
+                const result = Function('return ' + expr)();
+                const output = Number(result) + 1;
+                display.value = output;
+            } catch (e) {
+                display.value = 'error';
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
